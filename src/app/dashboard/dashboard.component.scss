@@ -1,0 +1,141 @@
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.header {
+  background: tomato;
+}
+
+.footer {
+  background: lightgreen;
+}
+
+.main {
+  text-align: left;
+  background: deepskyblue;
+}
+
+.aside-1 {
+  background: gold;
+}
+
+.aside-2 {
+  background: hotpink;
+}
+
+@media all and (min-width: 600px) {
+  .aside {
+    flex: 1 0 0;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .main {
+    flex: 3 0px;
+  }
+  .aside-1 {
+    order: 1;
+  }
+  .main {
+    order: 2;
+  }
+  .aside-2 {
+    order: 3;
+  }
+  .footer {
+    order: 4;
+  }
+}
+
+body {
+  padding: 2em;
+}
+
+.dash-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  min-width: 1vw;
+  column-gap: 5px;
+
+  .ray-A-right::after {
+    content: '';
+    position: absolute;
+    border: 3px solid black;
+    width: 11%;
+    background-color: black;
+  }
+
+  .ray-C-right::after {
+    content: '';
+    position: absolute;
+    align-items: stretch;
+    width: 4%;
+    border: 3px solid red;
+    background-color: red;
+  }
+
+  .ray-C-left::before {
+    content: '';
+    position: absolute;
+    width: 4%;
+    border: 3px solid red;
+    background-color: red;
+  }
+
+  .col-wrapper {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+  }
+
+  .side,
+  .main {
+    flex-direction: column;
+    justify-content: center;
+
+    span {
+      flex-wrap: nowrap;
+      width: 75px;
+    }
+  }
+
+  .side {
+    gap: 5px;
+  }
+
+  .left-col,
+  .right-col {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .center-col {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 10px;
+  }
+}
+
+.ray-D {
+  flex-grow: 2;
+  border-color: magenta;
+  background-color: magenta;
+}
+
+.horiz-line {
+  content: '';
+  width: 100%;
+  border: 2px solid green;
+  margin: 20px 0px;
+}
